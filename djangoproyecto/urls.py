@@ -17,6 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+# 1. Importas las vistas de tu primera aplicación
+from app_uno import views as vistas_uno 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    # 2. Registras las dos direcciones web para app_uno
+    path('app-uno/inicio/', vistas_uno.inicio_app_uno),
+    path('app-uno/detalle/', vistas_uno.detalle_app_uno),
 ]
